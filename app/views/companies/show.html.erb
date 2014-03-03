@@ -1,0 +1,33 @@
+<%= image_tag @response['image']['available_sizes'].first %>
+
+Name: <%= link_to @response['name'], @response['homepage_url'] %>
+Description: <%= @response['description'] %>
+Year Founded: <%= @response['founded_year'] %>
+Founders/Employees:
+<ul>
+<% @response['relationships'].each do |attr| %>
+  <li>Name: <%= attr['person']['first_name'] + " " + attr['person']['last_name'] %></li>
+  <li>Title: <%= attr['title'] %></li>
+<% end %>
+</ul>
+
+Competitions:
+<ul>
+  <% @response['competitions'].each do |comp| %>  
+  <li><%= comp['competitor']['name'] %></li>
+  <li><%= comp['competitor']['permalink'] %></li>
+  <% end %>
+</ul>
+
+Total Money Raised:
+<% @response['funding_rounds'].each do |funding| %>
+Date: <%= funding['funded_month']/funding['funded_day']/funding['funded_year'] %>
+Amount: <%= funding['raised_currency_code'] %><%= funding['raised_amount'] %>
+Article: <%= link_to funding['source_description'], funding['source_url'] %> 
+<ul> 
+  <% funding['investments'].each do |funds| %>
+  <li><%= funds['company'] || funds['financial_org'] %></li>
+  <% end %>
+</ul>
+<% end %>
+
