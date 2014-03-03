@@ -18,6 +18,7 @@ gem 'bootstrap-sass'
 # Third party API wrapper
 gem 'angellist_api'
 gem 'crunchbase'
+gem 'simplificator'
 
 group :development, :test do
   gem 'annotate'
