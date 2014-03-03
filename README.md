@@ -1,28 +1,14 @@
-== README
+## Startup Discovery
+This app is created to analyze the correlation of a site's traffic vs their potential to raise funding. The alternate goal for this app is to provide talents interested in joining startups another metrics to help them make the leap to joining a startup.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###Stack
+* Rails 4.0.2 with Ruby 2.1.1
+* PostGresql
 
-Things you may want to cover:
+#####Resources
+[Angel List API](https://angel.co/api)
+[Angel List API Gem](https://github.com/paulsingh/angellist-api)
+[CrunchBase API](http://developer.crunchbase.com/)
+[CrunchBase Gem](https://github.com/tylercunnion/crunchbase)
+[Compete API](https://developer.compete.com)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

@@ -23,6 +23,7 @@ class CompaniesController < ApplicationController
     @crunchbase = Crunchbase::Company.get("#{company.name}")
     @angel = AngellistApi.startup_search(:slug => "#{company.name}")
     # get id of startup for angel list and display all other info
+
     render :show
   end
   
