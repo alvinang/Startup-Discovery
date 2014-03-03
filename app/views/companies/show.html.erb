@@ -1,3 +1,5 @@
+<h1>Info from Crunchbase</h1>
+
 <%= image_tag @response['image']['available_sizes'].first %>
 
 Name: <%= link_to @response['name'], @response['homepage_url'] %>
@@ -31,3 +33,11 @@ Article: <%= link_to funding['source_description'], funding['source_url'] %>
 </ul>
 <% end %>
 
+<h2>Crunchbase dude..</h2>
+<%= @crunchbase %>
+<%= @crunchbase.name %>
+
+
+<h2>Info from AngelList</h2>
+
+<%= @angel %>

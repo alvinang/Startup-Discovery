@@ -19,7 +19,9 @@ class CompaniesController < ApplicationController
   
   def show
     company = Company.find(params[:id])
-    @response = JSON.parse HTTParty.get("http://api.crunchbase.com/v/1/company/#{company.name}.js?api_key=nqxhcb4us36r9qta4m7w6zts").response.body
+    @response = JSON.parse HTTParty.get("http://api.crunchbase.com/v/1/company/#{company.name}.js?api_key=#{ENV['CRUNCHBASE_API_KEY']}").response.body
+    @crunchbase = Crunchbase::Company.get("#{company.name}")
+    @angel = AngellistApi.all_startups(:filter => :hiring)
     render :show
   end
   
