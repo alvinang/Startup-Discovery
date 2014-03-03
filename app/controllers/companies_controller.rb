@@ -23,7 +23,7 @@ class CompaniesController < ApplicationController
     @crunchbase = Crunchbase::Company.get("#{company.name}")
     @angel = AngellistApi.startup_search(:slug => "#{company.name}")
     # get id of startup for angel list and display all other info
-
+    @compete = JSON.parse HTTParty.get("https://apps.compete.com/sites/#{ @angel.company_url.gsub("http://", "").gsub("https://", "")}/trended/uv/?apikey=#{ENV['COMPETE_API_KEY']}").response.body
     render :show
   end
   
