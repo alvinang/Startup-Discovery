@@ -7,7 +7,6 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'figaro'
 gem 'httparty'
@@ -18,6 +17,7 @@ gem 'bootstrap-sass'
 # Third party API wrapper
 gem 'angellist_api'
 gem 'crunchbase'
+
 
 group :development, :test do
   gem 'annotate'
