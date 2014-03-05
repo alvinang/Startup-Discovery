@@ -1,0 +1,10 @@
+<form class="form-inline search-form" role="form" action="<%= companies_url %>" method="post">
+  <%= form_token %>
+  
+  <div class="form-group">    
+    <input type="text" id="name" name="company[name]" 
+        class="form-control" placeholder="URL or Company Name">
+  </div>
+  
+  <button type="submit" class="btn btn-primary btn-lg">Search</button>
+</form>

@@ -1,11 +1,9 @@
-<form class="form-inline" role="form" action="<%= companies_url %>" method="post">
-  <%= form_token %>
-  
-  <div class="form-group">    
-    <label class="sr-only" for="search">Company Name</label>
-    <input type="text" id="name" name="company[name]" 
-      class="form-control" placeholder="URL or Company Name">
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Search</button>
-</form>
+<div class="row">
+  <div class="header-main text-center">
+		<h1>Startup Discover</h1>
+		<h4>Site Traffic, Funding Timeline & Potential</h4>
+    <%= render partial: 'companies/form' %>  
+	</div>
+</div>
+
+

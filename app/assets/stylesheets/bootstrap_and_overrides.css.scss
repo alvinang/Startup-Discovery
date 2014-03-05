@@ -1,3 +1,26 @@
+.header-main {
+  margin-top: 5%;
+  padding-bottom: 25px;
+  h1 {
+    font-weight: 400;
+    font-size: 40px;
+  }
+  h4 {
+    font-weight:300;
+  }
+}
 
+.search-form {
+  margin-top: 5%;
+  margin-bottom: 10%;
+  position: relative;
+  #name {
+    box-shadow: none;
+    padding-left: 10px;
+    height: 45px;
+    color: #505050;
+    width: 450px;
+  }
+}
 
 @import 'bootstrap';
