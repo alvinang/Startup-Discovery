@@ -1,26 +1,25 @@
-.header-main {
-  margin-top: 5%;
-  padding-bottom: 25px;
-  h1 {
-    font-weight: 400;
-    font-size: 40px;
-  }
-  h4 {
-    font-weight:300;
-  }
+.site-description,
+.main-navigation a {
+  color: #fff;
+}
+.site-title {
+  line-height: 27px
 }
 
-.search-form {
-  margin-top: 5%;
-  margin-bottom: 10%;
-  position: relative;
-  #name {
-    box-shadow: none;
-    padding-left: 10px;
-    height: 45px;
-    color: #505050;
-    width: 450px;
-  }
+.header-outer {
+  background-color: #1796c6;
 }
+
+.home-search .page-header .search-submit {
+  background-color: #a0cde5;
+}
+
+.site-description, .main-navigation a {
+  color: #fff;
+}
+.site-title {
+  line-height: 27px
+}
+
 
 @import 'bootstrap';

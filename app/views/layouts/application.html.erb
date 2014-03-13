@@ -1,16 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <%= render partial: 'layouts/head' %>
-</head>
-<body>
-  <%= render partial: 'layouts/navbar' %>
-  <%= render partial: 'layouts/messages' %>
+<html lang="en-US">
+  <head>
+    <%= render partial: 'layouts/head' %>
+  </head>
+ 
+  <body class="home-search">
+    <%= render partial: 'layouts/navbar' %>
   
-  <div class="container">
-    <%= yield %>
-  </div>
-  
-  <%= render partial: 'layouts/footer' %>
-</body>
+    <%= render partial: 'home/index' %>
+      
+
+ 	    
+    <div id="content" class="site-content">
+      <section id="primary" class="content-area full">
+        <main id="main" class="site-main" role="main">
+          <div class="container">
+            <%= render partial: 'home/featured' %>
+            <%= render partial: 'home/selected' %>
+          </div>
+        </main> 
+      </section> 
+    </div> 	
+	
+    <%= render partial: 'layouts/footer' %>
+  </body>
 </html>

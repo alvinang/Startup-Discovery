@@ -1,5 +1,63 @@
 <h1>Info from Compete</h1>
-<%#= @compete %>
+
+<div id="myfirstchart" style="height: 250px;"></div>
+<script>
+
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    {date: "201301", value: 26539},
+    {date: "201302", value: 29402},
+    {date: "201303", value: 18105},
+    {date: "201304", value: 27279},
+    {date: "201305", value: 25983},
+    {date: "201306", value: 43522},
+    {date: "201307", value: 40119},
+    {date: "201308", value: 54622},
+    {date: "201309", value: 62226},
+    {date: "201310", value: 59539},
+    {date: "201311", value: 56728},
+    {date: "201312", value: 48093},
+    {date: "201401", value: 65673}
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'date',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
+ 
+</script>
+
+<%= @compete %>
+
+
+<div id="secondchart" style="height: 250px;"></div>
+<script>
+
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'secondchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: <%= JSON.parse(@compete,:symbolize_names => true)[:data][:trends][:uv] %>,
+  // The name of the data record attribute that contains x-values.
+  xkey: 'date',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
+ 
+</script>
+
+<%= JSON.parse(@compete,:symbolize_names => true) %>
 
 <h2>Info from Crunchbase</h2>
 
@@ -10,10 +68,10 @@ Description: <%= @response['description'] %>
 Year Founded: <%= @response['founded_year'] %>
 Founders/Employees:
 <ul>
-<% @response['relationships'].each do |attr| %>
+  <% @response['relationships'].each do |attr| %>
   <li>Name: <%= attr['person']['first_name'] + " " + attr['person']['last_name'] %></li>
   <li>Title: <%= attr['title'] %></li>
-<% end %>
+  <% end %>
 </ul>
 
 Competitions:

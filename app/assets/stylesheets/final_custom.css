@@ -1,0 +1,24 @@
+body {
+  font-family: 'proxima_novalight';
+}
+button,
+html input[type="button"]:not(.ed_button),
+input[type="reset"],
+input[type="submit"] {
+  font: 700 13px/normal 'proxima_nova_rgregular', sans-serif;
+}
+label {
+  font: 700 16px/normal 'proxima_nova_rgregular', sans-serif;
+}
+h1,h2,h3,h4,h5,h6,.site-title {
+  font-family: 'proxima_nova_rgbold';
+}
+.main-menu ul.menu li a {
+  font-family: 'proxima_novalight'; 
+}
+h1.page-title {
+  font-family: 'proxima_novalight';
+}
+.main-navigation a {
+  font: 700 13px/normal 'proxima_nova_rgregular', sans-serif;
+}
