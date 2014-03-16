@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'figaro'
 gem 'httparty'
+gem 'backbone-on-rails'
 
 # UI
 gem 'bootstrap-sass'

@@ -1,24 +1,83 @@
-.site-description,
-.main-navigation a {
-  color: #fff;
-}
-.site-title {
-  line-height: 27px
-}
-
-.header-outer {
-  background-color: #1796c6;
+body {
+  -webkit-font-smoothing: antialiased;
+  .jumbotron {
+    padding: 30px 0 210px;
+    background-color: #1796c6 !important;  
+      
+  }
 }
 
-.home-search .page-header .search-submit {
-  background-color: #a0cde5;
+.landing-header {
+  padding: 50px 0;
+  color: white;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  h1.landing-title {    
+    font: 300 40px 'Roboto Slab', serif;
+  }
 }
 
-.site-description, .main-navigation a {
-  color: #fff;
+.white {
+  color: white;
 }
-.site-title {
-  line-height: 27px
+
+.landing-search{
+  margin-top: 3em;
+  input.home-search {
+    border-radius: 0;
+    text-transform: uppercase;
+    font: 400 16px 'Montserrat', sans-serif;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    height: 120%;
+    color: #acb0b3;
+  }  
+  button {
+    border-radius: 0;
+    background-color: #a0cde5;
+    font-size: 16px;
+    width: 150%;
+    height: 130%;
+    border: none;
+    &:hover {
+      background-color: #AAD8F1;
+    };
+  }
+}
+
+nav.navbar {
+  text-transform: uppercase;
+  border-radius: 0;
+  padding-bottom: 50px;
+  .navbar-brand {
+    color: white;
+    font-size: 1.5em;
+  }
+  ul {
+    padding-top: 10px;
+  }
+  li {
+    margin-left: 10px;
+    a {
+      color: white;
+      font-family: 'proxima_novalight';
+      font: 700 13px/normal 'proxima_nova_rgregular', sans-serif;
+      padding: 10px 20px;
+      border: 2px solid transparent;
+      font-weight: normal;
+      display: inline-block;
+      &:hover {
+        border: 2px solid white;
+        background-color: transparent;
+      };
+    }
+  }
+}
+
+footer a {
+  margin-right: 40px;
+  margin-top: -20px;
 }
 
 

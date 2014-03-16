@@ -1,79 +1,47 @@
-<div class="header-outer">	
-  <header class="site-header" role="banner">
-    <div class="container">
-      <nav class="main-navigation" role="navigation">          
-        <div class="main-menu">
-          <ul class="menu">
-            <li><a href="/">Home</a></li>
+<div class="landing">
+  <div class="jumbotron">
+    <nav class="navbar" role="navigation">
+      <div class="container">    
+        <div class="navbar-header">
+      
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            STARTUP <span class="glyphicon glyphicon-fire"></span> DISCOVERY
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
             <li><a href="#">Popular</a></li>
-            <li><a href="#">Themes</a></li>
+            <li><a href="#">Featured</a></li>
             <li><a href="#">Sign In</a></li>
-            <li><a href="#">Register</a></li>
           </ul>
-        </div>			
-      </nav> 
-
-      <div class="site-branding">
-        <a href="/" style="color:#ffffff;font-size:24px;">
-          STARTUP <span class="glyphicon glyphicon-fire"></span> DISCOVERY
-        </a>	          
+        </div>
       </div>
-
-    </div>
-  </header> 
-  
-  <div class="search-form-overlay">        
-    <form role="search" method="get" class="search-form" action="index.html">
-      <button type="submit" class="search-submit"><i class="icon-search"></i></button>
-      <label>
-        <span class="screen-reader-text">Search for:</span>
-        <input type="search" class="search-field" placeholder="Search" value="" name="find" title="Search for:">
-      </label>
-      <a href="#" class="header-search-toggle"><i class="icon-cancel"></i></a>
-      <input type="hidden" name="post_type" value="download">
-    </form>
-  </div>
-
-  <header class="page-header">
-    <div class="container">
-      <h1 class="page-title">
-        Startup Discovery <br>- Find the next big thing -
-      </h1>
-      <p>&nbsp;</p>
-      <p>
-        <a class="button" href="#">Featured</a> 
-        <a class="button" href="#">Popular</a>
-      </p>
-      <p>&nbsp;</p>
-        
-      <form role="search" method="get" class="search-form" action="index.html">
-        <button type="submit" class="search-submit"><i class="icon-search"></i></button>
-        <label>
-          <span class="screen-reader-text">Search for:</span>
-          <input type="search" class="search-field" placeholder="Search" value="" name="find" title="Search for:">
-        </label>            
-      </form>
-        
-    </div>
-  </header>
-</div>
-
-<!-- <header class="navbar navbar-default" role="navigation" style="margin-bottom:0;">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Startup Discovery', root_url, class: 'navbar-brand' %>
-    </div>
-    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <li><%= link_to 'Home', root_url %></li>
-        <li><%= link_to 'About' %></li>
-      </ul>
     </nav>
+    
+    <div class="landing-header text-center">
+      <h1 class="landing-title">
+        Startup Discovery<br>
+        - Find the next big thing - 
+      </h1>
+    </div>
+    <div class="landing-search col-xs-offset-3 col-xs-6">
+        <div class="input-group">
+          <input type="search" class="form-control home-search" placeholder="Startup Name">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <span class="glyphicon glyphicon-search white"></span>
+            </button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
   </div>
-</header> -->
+</div>

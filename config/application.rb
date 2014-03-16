@@ -13,7 +13,7 @@ Bundler.require(:default, Rails.env)
 
 module StartupDiscovery
   class Application < Rails::Application
-    config.assets.paths << "#{Rails.root}/app/assets/fonts" 
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     
     config.generators do |g|
       g.test_framework :rspec, 
