@@ -1,6 +1,7 @@
 ## Startup Discovery
 This app is created to analyze the correlation of a site's traffic vs their potential to raise funding. The alternate goal for this app is to provide talents interested in joining startups another metrics to help them make the leap to joining a startup.
 
+Check it out: [Startup Discovery](http://startup-discovery.herokuapp.com/)
 
 ###Current Version
 
