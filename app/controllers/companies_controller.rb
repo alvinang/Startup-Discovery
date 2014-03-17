@@ -1,5 +1,4 @@
 class CompaniesController < ApplicationController
-  
   include HTTParty
   
   def new
@@ -25,7 +24,7 @@ class CompaniesController < ApplicationController
            
     render :show
   end
-  
+    
   private
   
   def company_params
@@ -33,7 +32,7 @@ class CompaniesController < ApplicationController
   end
   
   def compete(name, url)
-    JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_ASFLUX_API_KEY']}").response.body
+    JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_API_KEY_2']}").response.body
   end
   
   def crunchbase_api(name)

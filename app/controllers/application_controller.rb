@@ -11,5 +11,5 @@ class ApplicationController < ActionController::Base
   end
   
   Crunchbase::API.key = ENV['CRUNCHBASE_API_KEY']
-    
+  
 end

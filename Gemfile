@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.1.1'
 gem 'rails', '4.0.2'
 
 gem 'sass-rails', '~> 4.0.0'
@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'figaro'
 gem 'httparty'
 gem 'backbone-on-rails'
+gem 'newrelic_rpm'
 
 # UI
 gem 'bootstrap-sass'
@@ -19,6 +20,11 @@ gem 'bootstrap-sass'
 gem 'angellist_api'
 gem 'crunchbase'
 
+group :production do
+  gem 'pg'
+  gem 'thin'
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'annotate'
