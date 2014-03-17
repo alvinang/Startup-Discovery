@@ -4,7 +4,13 @@ This app is created to analyze the correlation of a site's traffic vs their pote
 Check it out: [Startup Discovery](http://startup-discovery.herokuapp.com/)
 
 ###Current Version
+v0.0.1
 
+
+###ToDo
+* Change slug to company name
+* page caching for 24 hours
+* use high_voltage gem for static pages
 
 ###Stack
 * Rails 4.0.2 with Ruby 2.1.1

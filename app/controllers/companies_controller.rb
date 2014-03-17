@@ -32,7 +32,14 @@ class CompaniesController < ApplicationController
   end
   
   def compete(name, url)
-    JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_API_KEY_2']}").response.body
+    num = rand(0...10)
+    if num < 3
+      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_API_KEY_2']}").response.body      
+    elsif num < 6
+      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY']}").response.body
+    else  
+      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY_1']}").response.body    
+    end
   end
   
   def crunchbase_api(name)
