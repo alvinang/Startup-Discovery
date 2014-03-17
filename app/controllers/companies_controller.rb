@@ -34,7 +34,7 @@ class CompaniesController < ApplicationController
   def compete(name, url)
     num = rand(0...10)
     if num < 2
-      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_ASFLUX_API_KEY']}").response.body      
+      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY_2']}").response.body      
     elsif num < 5
       JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY']}").response.body
     elsif num < 7
