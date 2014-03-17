@@ -19,4 +19,6 @@ ActiveRecord::Schema.define(version: 20140302230409) do
     t.datetime "updated_at"
   end
 
+  add_index "companies", ["name"], name: "index_companies_on_name"
+
 end

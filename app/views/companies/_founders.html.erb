@@ -1,0 +1,19 @@
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr class="success">
+      <th>People</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% people.each do |info| %>    
+    <% full_name = "#{info.person_first_name} #{info.person_last_name}" %>
+    <tr>
+      <td>
+        <%= link_to full_name, "http://www.crunchbase.com/person/#{info.person_permalink}" %>
+      </td>
+      <td><%= info.title %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

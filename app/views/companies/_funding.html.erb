@@ -1,0 +1,20 @@
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr class="success">
+      <th>Raised Amount</th>
+      <th>Funded Date</th>      
+      <th>Source</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <% funding.each do |fund| %>    
+    <tr>
+      <td><%= "#{fund['raised_currency_code']} #{fund['raised_amount']}" %></td>
+      <td><%= "#{fund['funded_month']}/#{fund['funded_day']}/#{fund['funded_year']}" %></td>
+      <td>
+        <%= link_to fund['source_description'], fund['source_url'] %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

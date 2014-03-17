@@ -1,104 +1,44 @@
-<h1>Info from Compete</h1>
+<h1><%= link_to @crunchbase.name, @crunchbase.homepage_url %></h1>
 
-<div id="myfirstchart" style="height: 250px;"></div>
-<script>
+<!-- logo -->
+<%= @crunchbase.overview.html_safe %>
+<br>
+<!-- graph -->
+<table class="table">
+  <thead>
+    <tr class="info">
+      <th>Startup Site Traffic & Funding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= render partial: 'companies/graph', locals: { funding: @crunchbase.funding_rounds, compete_data: @compete['data']['trends']['uv'] } %>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-new Morris.Line({
-  // ID of the element in which to draw the chart.
-  element: 'myfirstchart',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: [
-    {date: "201301", value: 26539},
-    {date: "201302", value: 29402},
-    {date: "201303", value: 18105},
-    {date: "201304", value: 27279},
-    {date: "201305", value: 25983},
-    {date: "201306", value: 43522},
-    {date: "201307", value: 40119},
-    {date: "201308", value: 54622},
-    {date: "201309", value: 62226},
-    {date: "201310", value: 59539},
-    {date: "201311", value: 56728},
-    {date: "201312", value: 48093},
-    {date: "201401", value: 65673}
-  ],
-  // The name of the data record attribute that contains x-values.
-  xkey: 'date',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['value'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ['Value']
-});
- 
-</script>
+<hr>
+<br>
+<div class="row">
+  <div class='col-xs-5'>
+    <%= render partial: 'companies/summary', locals: { crunchbase: @crunchbase } %> 
+  </div>
 
-<%= @compete %>
+  <div class='col-xs-offset-1 col-xs-6'>
+    <%= render partial: 'companies/funding', locals: { funding: @crunchbase.funding_rounds } %> 
+  </div>
+</div>
 
+<hr>
+<br>
+<div class="row">
+  <div class='col-xs-6'>
+    <%= render partial: 'companies/founders', locals: { people: @crunchbase.relationships } %> 
+  </div>
 
-<div id="secondchart" style="height: 250px;"></div>
-<script>
-
-new Morris.Line({
-  // ID of the element in which to draw the chart.
-  element: 'secondchart',
-  // Chart data records -- each entry in this array corresponds to a point on
-  // the chart.
-  data: <%= JSON.parse(@compete,:symbolize_names => true)[:data][:trends][:uv] %>,
-  // The name of the data record attribute that contains x-values.
-  xkey: 'date',
-  // A list of names of data record attributes that contain y-values.
-  ykeys: ['value'],
-  // Labels for the ykeys -- will be displayed when you hover over the
-  // chart.
-  labels: ['Value']
-});
- 
-</script>
-
-<%= JSON.parse(@compete,:symbolize_names => true) %>
-
-<h2>Info from Crunchbase</h2>
-
-<%= image_tag @response['image']['available_sizes'].first %>
-
-Name: <%= link_to @response['name'], @response['homepage_url'] %>
-Description: <%= @response['description'] %>
-Year Founded: <%= @response['founded_year'] %>
-Founders/Employees:
-<ul>
-  <% @response['relationships'].each do |attr| %>
-  <li>Name: <%= attr['person']['first_name'] + " " + attr['person']['last_name'] %></li>
-  <li>Title: <%= attr['title'] %></li>
-  <% end %>
-</ul>
-
-Competitions:
-<ul>
-  <% @response['competitions'].each do |comp| %>  
-  <li><%= comp['competitor']['name'] %></li>
-  <li><%= comp['competitor']['permalink'] %></li>
-  <% end %>
-</ul>
-
-Total Money Raised:
-<% @response['funding_rounds'].each do |funding| %>
-Date: <%= funding['funded_month']/funding['funded_day']/funding['funded_year'] %>
-Amount: <%= funding['raised_currency_code'] %><%= funding['raised_amount'] %>
-Article: <%= link_to funding['source_description'], funding['source_url'] %> 
-<ul> 
-  <% funding['investments'].each do |funds| %>
-  <li><%= funds['company'] || funds['financial_org'] %></li>
-  <% end %>
-</ul>
-<% end %>
-
-<h2>Crunchbase dude..</h2>
-<%= @crunchbase %>
-<%= @crunchbase.name %>
-
-
-<h2>Info from AngelList</h2>
-
-<%= @angel %>
+  <div class='col-xs-offset-1 col-xs-4'>
+    <%= render partial: 'companies/competitions', locals: { competition: @crunchbase.competitions } %> 
+  </div>  
+</div>

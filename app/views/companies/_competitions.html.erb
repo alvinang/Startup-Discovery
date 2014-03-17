@@ -1,0 +1,16 @@
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr class="success">
+      <th>Competitor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% competition.each do |c| %>    
+    <tr>
+      <td>
+        <%= link_to c['competitor']['name'], "http://www.crunchbase.com/company/#{c['competitor']['name']}" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

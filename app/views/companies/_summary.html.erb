@@ -1,0 +1,18 @@
+<% content = ['total_money_raised', 'number_of_employees', 'founded_year'] %>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr class="success">
+      <th>Summary</th>
+      <th>Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% content.each do |c| %>    
+    <tr>
+      <td><%= c.humanize %></td>
+      <td><%= c == 'number_of_employees' ? "<": "" %><%= crunchbase.send(c) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

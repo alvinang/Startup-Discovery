@@ -1,0 +1,26 @@
+<div class="landing">
+  <div class="jumbotron">
+
+    <%= render partial: 'layouts/navbar' %>
+    
+    <div class="landing-header text-center">
+      <h1 class="landing-title">
+        Startup Discovery<br>
+        - Find the next big thing - 
+      </h1>
+    </div>
+    <div class="landing-search col-xs-offset-3 col-xs-6">
+      <form action="<%= companies_url %>" method="post">
+        <%= form_token %>
+        <div class="input-group">
+          <input type="search" class="form-control home-search" placeholder="Startup Name   (try: Angel List)" name="company[name]" autofocus>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <span class="glyphicon glyphicon-search white"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>      
+  </div>
+</div>

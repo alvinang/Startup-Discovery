@@ -18,23 +18,26 @@ class CompaniesController < ApplicationController
   end
   
   def show
-    company = Company.find(params[:id])
-    @response = JSON.parse HTTParty.get("http://api.crunchbase.com/v/1/company/#{company.name}.js?api_key=#{ENV['CRUNCHBASE_API_KEY']}").response.body
-    @crunchbase = Crunchbase::Company.get("#{company.name}")
-    @angel = AngellistApi.startup_search(:slug => "#{company.name}")
-
-    @compete = HTTParty.get("https://apps.compete.com/sites/#{ @angel.company_url.gsub("http://", "").gsub("https://", "")}/trended/uv/?apikey=#{ENV['COMPETE_API_KEY']}").response.body
+    @company = Company.find(params[:id])
+    @crunchbase = crunchbase_api(@company.name.gsub(' ', ''))
+    @compete = compete(@company.name, Company.clean_url(@crunchbase.homepage_url)) 
+    @angel = AngellistApi.startup_search(:slug => "#{@company.name.gsub(' ', '')}")
+           
     render :show
-  end
-  
-  def index
-    render :index
   end
   
   private
   
   def company_params
     params.require(:company).permit(:name)
+  end
+  
+  def compete(name, url)
+    JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_ASFLUX_API_KEY']}").response.body
+  end
+  
+  def crunchbase_api(name)
+    Crunchbase::Company.get("#{name}")
   end
   
 end

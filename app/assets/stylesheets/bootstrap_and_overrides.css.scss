@@ -75,6 +75,15 @@ nav.navbar {
   }
 }
 
+div.other-pages {
+  padding: 15px 0 5px;
+  .navbar {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    min-height: 0;
+  }
+}
+
 footer a {
   margin-right: 40px;
   margin-top: -20px;

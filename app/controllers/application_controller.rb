@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   
   require 'angellist_api'
   require 'crunchbase'
-
   
   AngellistApi.configure do |config|
     config.access_token = ENV['ANGELLIST_ACCESS_KEY']
