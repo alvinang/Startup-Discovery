@@ -33,12 +33,14 @@ class CompaniesController < ApplicationController
   
   def compete(name, url)
     num = rand(0...10)
-    if num < 3
+    if num < 2
       JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_API_KEY_2']}").response.body      
-    elsif num < 6
+    elsif num < 5
       JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY']}").response.body
-    else  
-      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY_1']}").response.body    
+    elsif num < 7
+      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY_1']}").response.body       
+    else
+      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_2']}").response.body 
     end
   end
   
