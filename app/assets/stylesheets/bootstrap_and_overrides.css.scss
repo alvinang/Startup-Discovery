@@ -2,9 +2,13 @@ body {
   -webkit-font-smoothing: antialiased;
   .jumbotron {
     padding: 30px 0 210px;
-    background-color: #1796c6 !important;  
-      
+    background-color: #1796c6 !important; 
+    margin-bottom: 15px;       
   }
+}
+
+.content {
+  padding-bottom: 30px;
 }
 
 .landing-header {
@@ -87,6 +91,14 @@ div.other-pages {
 footer a {
   margin-right: 40px;
   margin-top: -20px;
+}
+
+.colored-footer {
+  background-color: #1796c6;
+  padding-top: 20px;
+  a {
+    color: white;
+  }
 }
 
 

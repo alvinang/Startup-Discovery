@@ -1,13 +1,13 @@
-<footer id="footer">
+<footer id="footer" class="<%= foot %>">
   <div class="container">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <%= link_to 'Home' %>
-      <%= link_to 'About' %>
-      <%= link_to 'Privacy' %>
-      <%= link_to 'Terms' %>
+      <%= link_to 'Home', '/' %>
+      <%= link_to 'About', page_path('about') %>
+      <%= link_to 'Privacy', page_path('privacy') %>
+      <%= link_to 'Terms', page_path('terms') %>
     </div>
     <div class="text-right col-lg-6 col-md-6 col-sm-6 col-xs-6">
-      <p><a href="#">© Startup Discovery, 2014.</a></p>
+      <p><%= link_to '© Startup Discovery, 2014.', 'http://alvinang.github.io/' %>
     </div>
   </div>
 </footer>

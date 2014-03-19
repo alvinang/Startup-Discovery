@@ -16,10 +16,10 @@
     <div class="collapse navbar-collapse" id="nav-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="/">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Popular</a></li>
-        <li><a href="#">Featured</a></li>
-        <li><a href="#">Sign In</a></li>
+        <li><%= link_to 'About', page_path('about') %></li>
+        <li><%= link_to 'Popular', 'https://angel.co/trending/customers' %></li>
+        <li><%= link_to 'Featured', 'https://angel.co/startups?filter=featured' %></li>
+        <li><%= link_to 'Startup Jobs', 'https://angel.co/jobs' %></li>
       </ul>
     </div>
   </div>

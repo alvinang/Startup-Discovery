@@ -11,6 +11,7 @@
       <%= render partial: 'layouts/navbar' %>               
        </div>
     <% end %>
+    
     <div class="content">
       <section id="primary" class="content-area full">
         <main id="main" class="site-main" role="main">
@@ -22,7 +23,10 @@
         </main> 
       </section> 
     </div> 	
-	
-    <%= render partial: 'layouts/footer' %>
+    <% if current_page?('/') %>
+      <%= render partial: 'layouts/footer', locals: { foot: '' } %>
+    <% else %>
+      <%= render partial: 'layouts/footer', locals: { foot: 'colored-footer' } %>
+    <% end %>
   </body>
 </html>
