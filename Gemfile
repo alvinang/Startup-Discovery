@@ -12,6 +12,7 @@ gem 'figaro'
 gem 'httparty'
 gem 'backbone-on-rails'
 gem 'newrelic_rpm'
+gem 'high_voltage'
 
 # UI
 gem 'bootstrap-sass'
