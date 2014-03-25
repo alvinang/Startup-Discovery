@@ -7,17 +7,22 @@ class CompaniesController < ApplicationController
   end
   
   def create
-    @company = Company.new(company_params)
-    if @company.save
+    if @company = Company.find_by(name: company_params['name'])
       redirect_to company_url(@company)
     else
-      flash.now[:errors] = @company.errors.full_messages
-      render :new
+      @company = Company.new(company_params)
+    
+      if @company.save
+        redirect_to company_url(@company)
+      else
+        flash.now[:errors] = @company.errors.full_messages
+        render :new
+      end
     end
   end
   
   def show
-    @company = Company.find(params[:id])
+    @company = Company.friendly.find(params[:id])
     @crunchbase = crunchbase_api(@company.name.gsub(' ', ''))
     @compete = compete(@company.name, Company.clean_url(@crunchbase.homepage_url)) 
     @angel = AngellistApi.startup_search(:slug => "#{@company.name.gsub(' ', '')}")
