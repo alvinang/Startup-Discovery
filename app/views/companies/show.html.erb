@@ -1,48 +1,50 @@
-<h1><%= link_to @crunchbase.name, @crunchbase.homepage_url %></h1>
+<% cache cache_key_for_companies do %>
+  <h1><%= link_to @crunchbase.name, @crunchbase.homepage_url %></h1>
 
-<!-- logo -->
-<%= @crunchbase.overview.html_safe %>
-<hr>
-<!-- graph -->
-<p>
-  The chart below shows the amount of unique visitors to the site over the past 12 months. The "green" vertical line shows the time when the company received funding (if any).
-</p>
-<br>
-<table class="table">
-  <thead>
-    <tr class="info">
-      <th>Startup Site Traffic & Funding</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <%= render partial: 'companies/graph', locals: { funding: @crunchbase.funding_rounds, compete_data: @compete['data']['trends']['uv'] } %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <!-- logo -->
+  <%= @crunchbase.overview.html_safe %>
+  <hr>
+  <!-- graph -->
+  <p>
+    The chart below shows the amount of unique visitors to the site over the past 12 months. The "green" vertical line shows the time when the company received funding (if any).
+  </p>
+  <br>
+  <table class="table">
+    <thead>
+      <tr class="info">
+        <th>Startup Site Traffic & Funding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= render partial: 'companies/graph', locals: { funding: @crunchbase.funding_rounds, compete_data: @compete['data']['trends']['uv'] } %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<hr>
-<br>
-<div class="row">
-  <div class='col-xs-5'>
-    <%= render partial: 'companies/summary', locals: { crunchbase: @crunchbase } %> 
+  <hr>
+  <br>
+  <div class="row">
+    <div class='col-xs-5'>
+      <%= render partial: 'companies/summary', locals: { crunchbase: @crunchbase } %> 
+    </div>
+
+    <div class='col-xs-offset-1 col-xs-6'>
+      <%= render partial: 'companies/funding', locals: { funding: @crunchbase.funding_rounds } %> 
+    </div>
   </div>
 
-  <div class='col-xs-offset-1 col-xs-6'>
-    <%= render partial: 'companies/funding', locals: { funding: @crunchbase.funding_rounds } %> 
-  </div>
-</div>
+  <hr>
+  <br>
+  <div class="row">
+    <div class='col-xs-5'>
+      <%= render partial: 'companies/competitions', locals: { competition: @crunchbase.competitions } %> 
+    </div>
 
-<hr>
-<br>
-<div class="row">
-  <div class='col-xs-5'>
-    <%= render partial: 'companies/competitions', locals: { competition: @crunchbase.competitions } %> 
+    <div class='col-xs-offset-1 col-xs-6'>
+      <%= render partial: 'companies/founders', locals: { people: @crunchbase.relationships } %>     
+    </div>  
   </div>
-
-  <div class='col-xs-offset-1 col-xs-6'>
-    <%= render partial: 'companies/founders', locals: { people: @crunchbase.relationships } %>     
-  </div>  
-</div>
+<% end %>

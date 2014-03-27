@@ -14,9 +14,8 @@ gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'high_voltage'
 gem 'friendly_id', '~> 5.0.0'
-
-# UI
 gem 'bootstrap-sass'
+gem 'cache_digests'
 
 # Third party API wrapper
 gem 'angellist_api'
