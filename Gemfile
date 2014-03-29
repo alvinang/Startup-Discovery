@@ -15,7 +15,6 @@ gem 'newrelic_rpm'
 gem 'high_voltage'
 gem 'friendly_id', '~> 5.0.0'
 gem 'bootstrap-sass'
-gem 'cache_digests'
 
 # Third party API wrapper
 gem 'angellist_api'
@@ -25,6 +24,8 @@ group :production do
   gem 'pg'
   gem 'thin'
   gem 'rails_12factor'
+  gem 'memcachier'
+  gem 'dalli'
 end
 
 group :development, :test do
