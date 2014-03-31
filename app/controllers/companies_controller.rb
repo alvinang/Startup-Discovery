@@ -3,7 +3,6 @@ class CompaniesController < ApplicationController
   
   def new
     @company = Company.new
-    render :new
   end
   
   def create
@@ -26,8 +25,6 @@ class CompaniesController < ApplicationController
     @crunchbase = crunchbase_api(@company.name.gsub(' ', ''))
     @compete = compete(@company.name, Company.clean_url(@crunchbase.homepage_url)) 
     @angel = AngellistApi.startup_search(:slug => "#{@company.name.gsub(' ', '')}")
-           
-    render :show
   end
     
   private
