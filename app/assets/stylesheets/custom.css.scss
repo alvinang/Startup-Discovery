@@ -1,0 +1,5 @@
+@import 'utils';
+
+.morris-hover.morris-default-style {
+  @include border-radius(0);
+}

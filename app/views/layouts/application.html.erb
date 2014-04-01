@@ -3,31 +3,27 @@
     <%= render partial: 'layouts/head' %>
   </head>
  
-  <body id="container">
+  <body>
+      
     <% if current_page?('/') %>
       <%= render partial: 'home/landing' %>
     <% else %>      
-       <div class="jumbotron other-pages">
-      <%= render partial: 'layouts/navbar' %>               
-       </div>
+      <header class="other-pages">
+        <%= render partial: 'layouts/navbar' %>               
+      </header>
     <% end %>
     
-    <div class="content">
-      <section id="primary" class="content-area full">
-        <main id="main" class="site-main" role="main">
-          <div class="container">
-            
-            <%= yield %>
-
-          </div>
-        </main> 
-      </section> 
-    </div> 	
+    <section>
+      <article class="content container">        
+        <%= yield %>
+      </article> 	
+    </section>
     
     <% if current_page?('/') %>
       <%= render partial: 'layouts/footer', locals: { foot: '' } %>
     <% else %>
       <%= render partial: 'layouts/footer', locals: { foot: 'colored-footer' } %>
     <% end %>
+      
   </body>
 </html>

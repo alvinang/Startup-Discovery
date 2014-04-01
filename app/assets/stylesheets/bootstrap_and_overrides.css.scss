@@ -1,3 +1,5 @@
+@import 'utils';
+
 body {
   -webkit-font-smoothing: antialiased;
   .jumbotron {
@@ -7,9 +9,7 @@ body {
   }
 }
 
-.content {
-  padding-bottom: 30px;
-}
+.content { padding-bottom: 30px; }
 
 .landing-header {
   padding: 50px 0;
@@ -17,19 +17,16 @@ body {
   max-width: 60%;
   margin-left: auto;
   margin-right: auto;
-  h1.landing-title {    
-    font: 300 40px 'Roboto Slab', serif;
-  }
+  h1.landing-title { font: 300 40px 'Roboto Slab', serif; }
 }
 
-.white {
-  color: white;
-}
+.white { color: white; }
 
 .landing-search{
   margin-top: 3em;
+  
   input.home-search {
-    border-radius: 0;
+    @include border-radius(0);
     text-transform: uppercase;
     font: 400 16px 'Montserrat', sans-serif;
     padding: 10px;
@@ -37,6 +34,7 @@ body {
     height: 120%;
     color: #595D5F;
   }  
+  
   button {
     border-radius: 0;
     background-color: #a0cde5;
@@ -44,23 +42,22 @@ body {
     width: 150%;
     height: 130%;
     border: none;
-    &:hover {
-      background-color: #AAD8F1;
-    };
+    &:hover { background-color: #AAD8F1; }
   }
 }
 
 nav.navbar {
+  @include border-radius(0);
   text-transform: uppercase;
-  border-radius: 0;
   padding-bottom: 50px;
+  
   .navbar-brand {
     color: white;
     font-size: 1.5em;
   }
-  ul {
-    padding-top: 10px;
-  }
+  
+  ul { padding-top: 10px; }
+  
   li {
     margin-left: 10px;
     a {
@@ -79,12 +76,12 @@ nav.navbar {
   }
 }
 
-div.other-pages {
-  padding: 15px 0 5px;
+.other-pages {
+  padding: 15px 0 15px;
+  background-color: #1796c6 !important;
   .navbar {
     padding-bottom: 0;
     margin-bottom: 0;
-    min-height: 0;
   }
 }
 
@@ -96,10 +93,7 @@ footer a {
 .colored-footer {
   background-color: #1796c6;
   padding-top: 20px;
-  a {
-    color: white;
-  }
+  a { color: white; }
 }
-
 
 @import 'bootstrap';
