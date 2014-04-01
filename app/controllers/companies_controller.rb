@@ -33,17 +33,12 @@ class CompaniesController < ApplicationController
     params.require(:company).permit(:name)
   end
   
+  COMPETE_KEY = [ENV['COMPETE_PASSIONATE_API_KEY_2'], ENV['COMPETE_PASSIONATE_API_KEY'], ENV['COMPETE_PASSIONATE_API_KEY_1'], 
+                  ENV['COMPETE_2'], ENV['COMPETE_API_KEY_2'], ENV['COMPETE_API_KEY'], ENV['COMPETE_VIN_API_KEY'], ENV['COMPETE_ASFLUX_API_KEY']];
+  
   def compete(name, url)
-    num = rand(0...10)
-    if num < 2
-      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY_2']}").response.body      
-    elsif num < 5
-      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY']}").response.body
-    elsif num < 7
-      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_PASSIONATE_API_KEY_1']}").response.body       
-    else
-      JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{ENV['COMPETE_2']}").response.body 
-    end
+    num = rand(0..6)
+    compete_url = JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{COMPETE_KEY[num]}").response.body      
   end
   
   def crunchbase_api(name)
