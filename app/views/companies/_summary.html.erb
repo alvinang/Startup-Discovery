@@ -11,7 +11,7 @@
     <% content.each do |c| %>    
     <tr>
       <td><%= c.humanize %></td>
-      <td><%= c == 'number_of_employees' ? "<": "" %><%= crunchbase.send(c) %></td>
+      <td><%= c == 'number_of_employees' ? "<" : "" %><%= crunchbase.send(c) %></td>
     </tr>
     <% end %>
   </tbody>
