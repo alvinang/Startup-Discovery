@@ -2,44 +2,23 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? yield(:title) : "Startup Discovery" %></title>
+  <title><%= content_for? :title ? yield(:title) : "Startup Discovery" %></title>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Startup Discovery - does site traffic matters?" %>">
+  
   <%= csrf_meta_tags %>
-
-  <!-- Meta -->
   <%= favicon_link_tag 'http://res.cloudinary.com/dxxqqjrju/image/upload/v1395814727/favicon_2_qerltk.ico' %>
-  <meta name="og:title" content="Startup Discovery">
-  <meta name="og:type" content="website">
-  <meta name="og:url"  content="#">
 
   <!-- Styles -->
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet'>
-  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-
-  <!-- For third-generation iPad with high-resolution Retina display: -->
-  <!-- Size should be 144 x 144 pixels -->
-  <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
-
-  <!-- For iPhone with high-resolution Retina display: -->
-  <!-- Size should be 114 x 114 pixels -->
-  <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %> 
-
-  <!-- For first- and second-generation iPad: -->
-  <!-- Size should be 72 x 72 pixels -->
-  <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
-
-  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-  <!-- Size should be 57 x 57 pixels -->
-  <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto+Slab:300" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Montserrat" %>
 
   <!-- Javascripts -->
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" %>
   <%= javascript_include_tag "application" %>  
   
   <!-- Morris Graphs -->
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-  <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+  <%= yield :company_show %>
 
 </head>

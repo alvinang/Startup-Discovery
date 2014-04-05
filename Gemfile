@@ -14,6 +14,7 @@ gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'high_voltage'
 gem 'friendly_id', '~> 5.0.0'
+gem 'thin'
 
 # Third party API wrapper
 gem 'angellist_api'
@@ -21,7 +22,6 @@ gem 'crunchbase'
 
 group :production do
   gem 'pg'
-  gem 'thin'
   gem 'rails_12factor'
   gem 'memcachier'
   gem 'dalli'
