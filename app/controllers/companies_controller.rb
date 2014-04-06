@@ -22,9 +22,10 @@ class CompaniesController < ApplicationController
   
   def show
     @company = Company.friendly.find(params[:id])
+    
     if stale?(@company)
       @crunchbase = crunchbase_api(@company.name.gsub(' ', ''))
-      @compete = compete(@company.name, Company.clean_url(@crunchbase.homepage_url)) 
+      @compete = compete(Company.clean_url(@crunchbase.homepage_url)) 
       @angel = AngellistApi.startup_search(:slug => "#{@company.name.gsub(' ', '')}")
     end
   end
@@ -38,7 +39,7 @@ class CompaniesController < ApplicationController
   COMPETE_KEY = [ENV['COMPETE_PASSIONATE_API_KEY_2'], ENV['COMPETE_PASSIONATE_API_KEY'], ENV['COMPETE_PASSIONATE_API_KEY_1'], 
                   ENV['COMPETE_2'], ENV['COMPETE_API_KEY_2'], ENV['COMPETE_API_KEY'], ENV['COMPETE_VIN_API_KEY'], ENV['COMPETE_ASFLUX_API_KEY']];
   
-  def compete(name, url)
+  def compete(url)
     num = rand(0..6)
     compete_url = JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{COMPETE_KEY[num]}").response.body      
   end
