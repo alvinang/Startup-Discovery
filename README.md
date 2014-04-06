@@ -14,6 +14,9 @@ v0.0.2
 ##### v0.0.2
 * use company name as slug - [friendly_id gem](https://github.com/norman/friendly_id)
 * implemented rails fragment caching - 30 days
+* moved google fonts from _head.html.erb to font_face.css to avoid re-rendering page if assets are the same (browser caching)
+* moved morris.js javascript files to show.html.erb (using content_for method) to improve page load time
+* used stale?(@company) in controller to avoid performing additional API calls if data is fresh (within 30 days)
 
 #####Resources
 * [Angel List API](https://angel.co/api)
