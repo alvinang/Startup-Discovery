@@ -4,9 +4,9 @@ module CompaniesHelper
     time_difference = ((Time.now - @company.updated_at)/86400).round
     
     if (time_difference > 30) 
-      "#{params[:id]}-#{Time.now.to_i}"
+      "#{@company.slug}-#{Time.now.to_i}"
     else
-      "#{params[:id]}-#{@company.updated_at.to_i}"      
+      "#{@company.slug}-#{@company.updated_at.to_i}"      
     end
   end
   

@@ -4,7 +4,7 @@
   <%= javascript_include_tag  "http://cdn.oesmith.co.uk/morris-0.4.3.min.js" %>
 <% end %>  
 
-<% cache cache_key_for_companies do %>
+<% cache cache_key_for_companies, expires_in: 30.days do %>
   <h1><%= link_to @crunchbase.name, @crunchbase.homepage_url %></h1>
 
   <!-- logo -->
