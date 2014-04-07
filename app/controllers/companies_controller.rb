@@ -1,4 +1,4 @@
-class CompaniesController < ApplicationController
+class CompaniesController < ApplicationController    
   include HTTParty
   
   def new
@@ -22,18 +22,21 @@ class CompaniesController < ApplicationController
   
   def show
     @company = Company.friendly.find(params[:id])
-    
-    if stale?(@company)
-      @crunchbase = crunchbase_api(@company.name.gsub(' ', ''))
-      @compete = compete(Company.clean_url(@crunchbase.homepage_url)) 
-      @angel = AngellistApi.startup_search(:slug => "#{@company.name.gsub(' ', '')}")
-    end
+    get_api_data(@company)
   end
     
   private
   
   def company_params
     params.require(:company).permit(:name)
+  end
+  
+  def get_api_data(company)
+    if stale?(company)
+      @crunchbase = crunchbase_api(company.name.gsub(' ', ''))
+      @compete = compete(Company.clean_url(@crunchbase.homepage_url)) 
+      @angel = AngellistApi.startup_search(:slug => "#{company.name.gsub(' ', '')}")
+    end
   end
   
   COMPETE_KEY = [ENV['COMPETE_PASSIONATE_API_KEY_2'], ENV['COMPETE_PASSIONATE_API_KEY'], ENV['COMPETE_PASSIONATE_API_KEY_1'], 
