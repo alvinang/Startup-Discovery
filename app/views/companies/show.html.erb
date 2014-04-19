@@ -4,6 +4,8 @@
   <%= javascript_include_tag  "http://cdn.oesmith.co.uk/morris-0.4.3.min.js" %>
 <% end %>  
 
+<% content_for :title do %><%= @company.slug.humanize %> - Startup Discovery<% end %>
+
 <% cache cache_key_for_companies, expires_in: 30.days do %>
   <h1><%= link_to @crunchbase.name, @crunchbase.homepage_url %></h1>
 
