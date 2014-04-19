@@ -53,6 +53,7 @@
         <ul class="nav nav-tabs">
           <li class="active"><a href="#tab_1" data-toggle="tab">Competitor</a></li>
           <li><a href="#tab_2" data-toggle="tab">People</a></li>
+          <li><a href="#tab_3" data-toggle="tab">Jobs</a></li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="tab_1">
@@ -60,6 +61,9 @@
           </div>
           <div class="tab-pane" id="tab_2">
             <%= render partial: 'companies/founders', locals: { people: @crunchbase.relationships } %>  
+          </div>
+          <div class="tab-pane" id="tab_3">
+            
           </div>
         </div>
         </div>  
