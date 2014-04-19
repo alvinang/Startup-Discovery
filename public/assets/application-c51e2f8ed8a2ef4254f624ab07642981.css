@@ -125,9 +125,13 @@ nav.navbar {
     padding-bottom: 0;
     margin-bottom: 0; }
 
+footer p a {
+  margin-right: 0; }
 footer a {
   margin-right: 40px;
   margin-top: -20px; }
+footer small {
+  color: white; }
 
 .colored-footer {
   background-color: #1796c6;
