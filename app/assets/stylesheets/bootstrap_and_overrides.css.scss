@@ -85,10 +85,19 @@ nav.navbar {
   }
 }
 
-footer a {
-  margin-right: 40px;
-  margin-top: -20px;
-}
+footer {
+  p a {
+    margin-right: 0;
+  }
+  a {
+    margin-right: 40px;
+    margin-top: -20px;
+  }
+  small {
+    color: white;
+  }  
+} 
+
 
 .colored-footer {
   background-color: #1796c6;
