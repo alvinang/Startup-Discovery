@@ -46,7 +46,7 @@ class CompaniesController < ApplicationController
   
   def compete(url)
     num = rand(0..6)
-    compete_url = JSON.parse HTTParty.get("https://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{COMPETE_KEY[num]}").response.body      
+    compete_url = JSON.parse HTTParty.get("http://apps.compete.com/sites/#{url}/trended/uv/?apikey=#{COMPETE_KEY[num]}").response.body      
   end
   
   def crunchbase_api(name)
