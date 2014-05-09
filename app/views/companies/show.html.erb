@@ -51,19 +51,19 @@
     <div class="col-md-12">
       <div class="nav-tabs-custom">
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#tab_1" data-toggle="tab">Competitor</a></li>
+          <li class="active"><a href="#tab_1" data-toggle="tab">Jobs</a></li>
           <li><a href="#tab_2" data-toggle="tab">People</a></li>
-          <li><a href="#tab_3" data-toggle="tab">Jobs</a></li>
+          <li><a href="#tab_3" data-toggle="tab">Competitor</a></li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="tab_1">
-              <%= render partial: 'companies/competitions', locals: { competition: @crunchbase.competitions } %> 
+            <%= render partial: 'companies/jobs', locals: { jobs: @angel_jobs } %>  
           </div>
           <div class="tab-pane" id="tab_2">
-            <%= render partial: 'companies/founders', locals: { people: @crunchbase.relationships } %>  
+            <%= render partial: 'companies/founders', locals: { founders: @crunchbase.relationships } %>  
           </div>
           <div class="tab-pane" id="tab_3">
-            
+            <%= render partial: 'companies/competitions', locals: { competition: @crunchbase.competitions } %> 
           </div>
         </div>
         </div>  

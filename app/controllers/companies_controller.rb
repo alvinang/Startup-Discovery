@@ -36,6 +36,8 @@ class CompaniesController < ApplicationController
       @crunchbase = crunchbase_api(company.name.gsub(' ', ''))
       @compete = compete(Company.clean_url(@crunchbase.homepage_url)) 
       @angel = AngellistApi.startup_search(:slug => "#{company.name.gsub(' ', '')}")
+      company_id = @angel.id
+      @angel_jobs = AngellistApi.get_startup_jobs(company_id)
     end
   end
   

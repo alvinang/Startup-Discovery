@@ -1,0 +1,22 @@
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr class="success">
+      <th>Title</th>
+      <th>Salary</th>           
+      <th>Location</th>
+      <th>Skills</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% jobs.each do |job| %>    
+    <% salary = "#{number_with_precision(job.salary_min, :precision => 0, :delimiter => ',')} - #{number_with_precision(job.salary_max, :precision => 0, :delimiter => ',')}" %>
+    <% job_tags = job['tags'] %>
+    <tr>
+      <td><%= link_to job.title, "#{job.angellist_url}" %></td>
+      <td><%= salary %></td>
+      <td><%= job_tags[-2].display_name %></td>
+      <td><%= job_tags.map { |tag| tag.display_name if tag.tag_type == "SkillTag" }.compact.join(', ') %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

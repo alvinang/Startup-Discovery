@@ -9,7 +9,7 @@
   <tbody>
     <% funding.each do |fund| %>    
     <tr>
-      <td><%= "#{fund['raised_currency_code']} #{fund['raised_amount']}" %></td>
+      <td><%= "#{fund['raised_currency_code']} #{number_with_precision(fund['raised_amount'], :precision => 0, :delimiter => ',')}" %></td>
       <td><%= "#{fund['funded_month']}/#{fund['funded_day']}/#{fund['funded_year']}" %></td>
       <td>
         <%= link_to fund['source_description'], fund['source_url'] %>
