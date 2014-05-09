@@ -16,7 +16,7 @@ gem 'newrelic_rpm'
 gem 'high_voltage'
 gem 'friendly_id', '~> 5.0.0'
 gem 'sitemap_generator'
-gem 'thin'
+gem 'unicorn'
 
 # Third party API wrapper
 gem 'angellist_api'
