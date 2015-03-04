@@ -30,6 +30,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    airbrake (4.1.0)
+      builder
+      multi_json
     angellist_api (1.0.7)
       faraday (~> 0.7)
       faraday_middleware (~> 0.7)
@@ -246,6 +249,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   angellist_api
   annotate
   backbone-on-rails

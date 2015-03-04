@@ -17,6 +17,7 @@ gem 'high_voltage'
 gem 'friendly_id', '~> 5.0.0'
 gem 'sitemap_generator'
 gem 'unicorn'
+gem 'airbrake'
 
 # Third party API wrapper
 gem 'angellist_api'
