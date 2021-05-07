@@ -1,17 +1,17 @@
 source 'https://rubygems.org'
 
 ruby '2.1.1'
-gem 'rails', '4.0.2'
+gem 'rails', '5.2.4.6'
 
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 5.0.5'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
+gem 'coffee-rails', '~> 4.2.2'
+gem 'jquery-rails', '>= 4.0.1'
 gem 'jbuilder', '~> 1.2'
 
-gem 'figaro'
+gem 'figaro', '>= 1.0.0'
 gem 'httparty'
-gem 'backbone-on-rails'
+gem 'backbone-on-rails', '>= 1.1.1.0'
 gem 'newrelic_rpm'
 gem 'high_voltage'
 gem 'friendly_id', '~> 5.0.0'
@@ -37,8 +37,8 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'sqlite3'
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'rspec-rails', '>= 2.14.1'
+  gem 'factory_girl_rails', '>= 4.4.1'
 end
 
 group :test do
