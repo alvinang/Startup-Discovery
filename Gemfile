@@ -33,7 +33,7 @@ end
 group :development, :test do
   gem 'annotate'
   gem 'pry-rails'
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.8.0'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'sqlite3'
@@ -44,6 +44,6 @@ end
 group :test do
   gem 'guard-rspec'
   gem 'faker'
-  gem 'capybara'
+  gem 'capybara', '>= 2.2.1'
   gem 'launchy'
 end
