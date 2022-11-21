@@ -27,7 +27,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'memcachier'
-  gem 'dalli'
+  gem 'dalli', '>= 3.2.3'
 end
 
 group :development, :test do
