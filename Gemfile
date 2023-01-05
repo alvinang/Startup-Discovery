@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
 gem 'figaro'
-gem 'httparty'
+gem 'httparty', '>= 0.21.0'
 gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'high_voltage'
