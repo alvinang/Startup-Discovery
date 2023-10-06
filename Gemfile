@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
 ruby '2.1.1'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.0'
 
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'jquery-rails', '>= 3.1.1'
 gem 'jbuilder', '~> 1.2'
 
-gem 'figaro'
+gem 'figaro', '>= 1.0.0'
 gem 'httparty'
 gem 'backbone-on-rails'
 gem 'newrelic_rpm'
@@ -33,12 +33,12 @@ end
 group :development, :test do
   gem 'annotate'
   gem 'pry-rails'
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.3.0'
   gem 'binding_of_caller'
-  gem 'quiet_assets'
+  gem 'quiet_assets', '>= 1.0.3'
   gem 'sqlite3'
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'rspec-rails', '>= 2.14.2'
+  gem 'factory_girl_rails', '>= 4.5.0'
 end
 
 group :test do
