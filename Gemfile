@@ -44,6 +44,6 @@ end
 group :test do
   gem 'guard-rspec'
   gem 'faker'
-  gem 'capybara'
+  gem 'capybara', '>= 2.3.0'
   gem 'launchy'
 end
