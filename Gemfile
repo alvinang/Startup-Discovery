@@ -37,7 +37,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'sqlite3'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 8.0.0'
   gem 'factory_girl_rails'
 end
 
